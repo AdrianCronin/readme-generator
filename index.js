@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
-// require inquirer
-const inquirer = require('inquirer');
+const inquirer = require('inquirer'); // inquirer module
+const fs = require('fs'); // file system module
 
 // TODO: fill out prompts from README
 inquirer
