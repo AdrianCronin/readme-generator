@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer'); // inquirer module
 const fs = require('fs'); // file system module
+const genMark = require('./utils/generateMarkdown');
 
 // TODO: fill out prompts from README
 inquirer
@@ -12,7 +13,7 @@ inquirer
     }
   ])
   .then((response) =>
-    console.log(response.input)
+    console.log(response.input),
   );
 
 
