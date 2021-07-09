@@ -12,6 +12,11 @@ const questions = [
     message: 'What is the title of your project?',
     name: 'title',
   },
+  {
+    type: 'input',
+    message: 'Please enter a description of your project.',
+    name: 'description',
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -22,7 +27,7 @@ function init() {
   inquirer
     .prompt(questions) // prompt the user for answers
     .then((response) => // pass answers into generate markdown
-      console.log(response.input),
+      console.log(`${response.title}\n${response.description}`),
     ); // use generated `markdownText` to `writeToFile('output.md', markdownText
 };
 
