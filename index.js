@@ -6,6 +6,23 @@ const generateMarkdown = require('./utils/generateMarkdown'); //
 
 // TODO: fill out prompts from README
 // TODO: Create an array of questions for user input
+// array with different licenses
+const licenses = [
+  'Apache-2.0',
+  'BSD-3-Clause',
+  'BSD-2-Clause',
+  'GPL-2.0',
+  'GPL-3.0',
+  'LGPL-2.0',
+  'LGPL-2.1',
+  'LGPL-3.0',
+  'MIT',
+  'MPL-2.0',
+  'CDDL-1.0',
+  'EPL-2.0',
+  'None',
+]
+
 const questions = [
   {
     type: 'input',
@@ -31,7 +48,7 @@ const questions = [
     type: 'list', // this will need to be a selection from options instead of input
     message: 'What type of license is this project under?', 
     name: 'license',
-    choices: [],
+    choices: licenses, // TODO: create an array with all the licenses
   },
   {
     type: 'input',
@@ -54,6 +71,8 @@ const questions = [
     name: 'email',
   },
 ];
+
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
