@@ -23,22 +23,35 @@ function generateMarkdown(data) {
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
-  - [Contribute](#contribute)
+  - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
 
   ## Installation
 
+  ${data.install}
+
   ## Usage
+
+  ${data.usage}
 
   ## License
 
-  ## Contribute
+  ${data.license}
+
+  ## Contributing
+
+  ${data.contribute}
 
   ## Tests
 
+  ${data.tests}
+
   ## Questions
 
+  For any additional questions please reach out to me at:\n
+  [My Github Profile](https://github.com/${data.githubProfile})\n
+  [Email](mailto:${data.email})
 
 `;
 }

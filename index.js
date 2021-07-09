@@ -14,8 +14,44 @@ const questions = [
   },
   {
     type: 'input',
-    message: 'Please enter a description of your project.',
+    message: 'Enter a description of your project.',
     name: 'description',
+  },
+  {
+    type: 'input',
+    message: 'What are the steps required to install your project?',
+    name: 'install',
+  },
+  {
+    type: 'input',
+    message: 'Provide usage instructions.',
+    name: 'usage',
+  },
+  {
+    type: 'list', // this will need to be a selection from options instead of input
+    message: 'What type of license is this project under?', 
+    name: 'license',
+    choices: [],
+  },
+  {
+    type: 'input',
+    message: 'Provide contribution guidelines.',
+    name: 'contribute',
+  },
+  {
+    type: 'input',
+    message: 'Provide testing instructions.',
+    name: 'tests',
+  },
+  {
+    type: 'input',
+    message: 'Enter your Github username',
+    name: 'githubProfile',
+  },
+  {
+    type: 'input',
+    message: 'Enter your email',
+    name: 'email',
   },
 ];
 
