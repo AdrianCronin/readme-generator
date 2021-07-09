@@ -13,13 +13,9 @@ const licenses = [
   'BSD-2-Clause',
   'GPL-2.0',
   'GPL-3.0',
-  'LGPL-2.0',
-  'LGPL-2.1',
   'LGPL-3.0',
   'MIT',
   'MPL-2.0',
-  'CDDL-1.0',
-  'EPL-2.0',
   'None',
 ]
 
@@ -46,7 +42,7 @@ const questions = [
   },
   {
     type: 'list', // this will need to be a selection from options instead of input
-    message: 'What type of license is this project under?', 
+    message: 'What type of license is this project under?',
     name: 'license',
     choices: licenses, // TODO: create an array with all the licenses
   },
@@ -84,9 +80,10 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer
     .prompt(questions) // prompt the user for answers
-    .then((response) => // pass answers into `generateMarkdown.generateMarkdown`
-      generateMarkdown(response),
-    )
+    .then((response) => {   // pass answers into `generateMarkdown.generateMarkdown`
+
+      return generateMarkdown(response)
+    })
     .then((response) =>
       writeToFile('README.md', response),
     ); // use generated `markdownText` to `writeToFile`
