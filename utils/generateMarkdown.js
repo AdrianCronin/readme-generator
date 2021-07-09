@@ -1,6 +1,6 @@
 // Returns the license's badge url. If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    return licenseList[license].badge
+  return licenseList[license].badge
 }
 
 // Returns the license's link url. If there is no license, return an empty string
@@ -57,15 +57,25 @@ const licenseList = {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 
-  let license = data.license;
-  console.log(license);
+  // deconstructed variable from data object
+  const {
+    title,
+    description,
+    install,
+    usage,
+    license,
+    contribute,
+    tests,
+    githubProfile,
+    email,
+  } = data;
 
-  return `# ${data.title}
+  return `# ${title}
 
   ## Description
   ${renderLicenseBadge(license)}\n
 
-  ${data.description}
+  ${description}
 
   ## Table of Contents
 
@@ -78,27 +88,27 @@ function generateMarkdown(data) {
 
   ## Installation
 
-  ${data.install}
+  ${install}
 
   ## Usage
 
-  ${data.usage}
+  ${usage}
   
   ${renderLicenseSection(license)}
 
   ## Contributing
 
-  ${data.contribute}
+  ${contribute}
 
   ## Tests
 
-  ${data.tests}
+  ${tests}
 
   ## Questions
 
   For any additional questions please reach out to me at:\n
-  [My Github Profile](https://github.com/${data.githubProfile})\n
-  [Email](mailto:${data.email})
+  [My Github Profile](https://github.com/${githubProfile})\n
+  [Email](mailto:${email})
 
 `;
 }
