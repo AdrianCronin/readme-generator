@@ -1,19 +1,18 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Returns the license's badge url. If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  return `${licenseList[license].badge}`
+    return licenseList[license].badge
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Returns the license's link url. If there is no license, return an empty string
 function renderLicenseLink(license) {
- return licenseList[license].link
+  return licenseList[license].link
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Renders the License section. If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `${renderLicenseLink(license)}`
+  return `## License
+  ${renderLicenseLink(license)}
+  `
 }
 
 // object contains the license names as keys and their links and badges as a nested object properties
@@ -84,8 +83,6 @@ function generateMarkdown(data) {
   ## Usage
 
   ${data.usage}
-
-  ## License
   
   ${renderLicenseSection(license)}
 
