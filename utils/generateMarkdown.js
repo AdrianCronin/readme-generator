@@ -12,8 +12,7 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  console.log("We are generating markdown, gamers");
-//   return `# ${data.title}
+  return `# ${data.title}
 
 // `;
 }
