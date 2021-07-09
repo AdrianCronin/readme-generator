@@ -2,11 +2,8 @@
 const inquirer = require('inquirer'); // inquirer module
 const fs = require('fs'); // file system module
 const generateMarkdown = require('./utils/generateMarkdown'); //
-// look up require 'path'
 
-// TODO: fill out prompts from README
-// TODO: Create an array of questions for user input
-// array with different licenses
+// array with different license options
 const licenses = [
   'Apache-2.0',
   'BSD-3-Clause',
@@ -19,6 +16,7 @@ const licenses = [
   'None',
 ]
 
+// array with the prompts
 const questions = [
   {
     type: 'input',
@@ -70,23 +68,23 @@ const questions = [
 
 
 
-// TODO: Create a function to write README file
+// takes a file name string and the data from `generateMarkdown()` and creates a README.md in the output folder
 function writeToFile(fileName, data) {
   fs.writeFile(`./output/${fileName}`, data, (err) =>
     err ? console.error(err) : console.log('writeToFile executed successfully!'))
 };
 
-// TODO: Create a function to initialize app
+// starts prompting the user for input when index.js is run
 function init() {
   inquirer
-    .prompt(questions) // prompt the user for answers
-    .then((response) => {   // pass answers into `generateMarkdown.generateMarkdown`
-
-      return generateMarkdown(response)
-    })
+    .prompt(questions) // pass the questions array into the function and start prompting
+    .then((response) =>   // pass answers into `generateMarkdown()`
+      generateMarkdown(response)
+    )
     .then((response) =>
-      writeToFile('README.md', response),
-    ); // use generated `markdownText` to `writeToFile`
+      // take the data from `generateMarkdown()` and pass it into `writeToFile`, file name generated will be named 'README.md'
+      writeToFile('README.md', response)
+    );
 };
 
 // Function call to initialize app
