@@ -57,7 +57,7 @@ const licenseList = {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 
-  // deconstructed variable from data object
+  // destructured variables from data object
   const {
     title,
     description,
