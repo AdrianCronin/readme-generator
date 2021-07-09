@@ -23,7 +23,7 @@ function init() {
     .prompt(questions) // prompt the user for answers
     .then((response) => // pass answers into generate markdown
       console.log(response.input),
-    );
+    ); // use generated `markdownText` to `writeToFile('output.md', markdownText
 };
 
 // Function call to initialize app
