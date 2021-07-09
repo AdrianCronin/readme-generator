@@ -20,14 +20,18 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { };
+function writeToFile(fileName, data) {
+  data = JSON.stringify(data); 
+  fs.writeFile(`./output/${fileName}`, data, (err) =>
+    err ? console.error(err) : console.log('writeToFile executed successfully!'))
+};
 
 // TODO: Create a function to initialize app
 function init() {
   inquirer
     .prompt(questions) // prompt the user for answers
     .then((response) => // pass answers into generate markdown
-      console.log(`${response.title}\n${response.description}`),
+      writeToFile('README.md', response),
     ); // use generated `markdownText` to `writeToFile('output.md', markdownText
 };
 
