@@ -66,6 +66,16 @@ function renderTableOfContents() {
   `
 }
 
+// Renders the Description Section.
+function renderDescriptionSection(description, license) {
+  return `
+  ## Description
+  ${renderLicenseBadge(license)}
+
+  ${description}
+  `
+}
+
 // Takes the response object and renders the data from it into a string and returns that string
 function generateMarkdown(data) {
 
@@ -86,10 +96,7 @@ function generateMarkdown(data) {
   return `
   # ${title}
   
-  ## Description
-  ${renderLicenseBadge(license)}
-
-  ${description}
+  ${renderDescriptionSection(description, license)}
 
   ${renderTableOfContents()}
   
