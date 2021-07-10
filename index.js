@@ -39,10 +39,10 @@ const questions = [
     name: 'usage',
   },
   {
-    type: 'list', // this will need to be a selection from options instead of input
+    type: 'list', 
     message: 'What type of license is this project under?',
     name: 'license',
-    choices: licenses, // TODO: create an array with all the licenses
+    choices: licenses, 
   },
   {
     type: 'input',

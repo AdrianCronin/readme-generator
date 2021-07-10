@@ -70,6 +70,7 @@ function generateMarkdown(data) {
     email,
   } = data;
 
+  // returns a string that will be passed into a markdown file
   return `
   # ${title}
   
