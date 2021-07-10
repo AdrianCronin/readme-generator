@@ -76,6 +76,57 @@ function renderDescriptionSection(description, license) {
   `
 }
 
+// Renders the title.
+function renderTitleSection(title) {
+  return `# ${title}`
+}
+// Renders the Installation Section
+function renderInstallationSection(install) {
+  return `
+  ## Installation
+
+  ${install}
+  `
+}
+
+// Renders the Usage Section
+function renderUsageSection(usage) {
+  return `
+  ## Usage
+
+  ${usage}
+  `
+}
+
+// Renders the Contributing Section
+function renderContributingSection(contribute) {
+return `
+## Contributing
+
+${contribute}
+`
+}
+
+// Renders the Tests Section
+function renderTestsSection(tests) {
+return `
+## Tests
+
+${tests}
+`
+}
+
+// Renders the Questions Section
+function renderQuestionsSection(githubProfile, email) {
+  return `
+  ## Questions
+
+  For any additional questions please reach out to me at:\n
+  [My Github Profile](https://github.com/${githubProfile})\n
+  [Email](mailto:${email})
+  `
+}
+
 // Takes the response object and renders the data from it into a string and returns that string
 function generateMarkdown(data) {
 
@@ -94,36 +145,23 @@ function generateMarkdown(data) {
 
   // returns a string that will be passed into a markdown file
   return `
-  # ${title}
+  ${renderTitleSection(title)}
   
   ${renderDescriptionSection(description, license)}
 
   ${renderTableOfContents()}
   
-  ## Installation
-
-  ${install}
-
-  ## Usage
-
-  ${usage}
+  ${renderInstallationSection(install)}
   
+  ${renderUsageSection(usage)}
+    
   ${renderLicenseSection(license)}
 
-  ## Contributing
+  ${renderContributingSection(contribute)}
+  
+  ${renderTestsSection(tests)}
 
-  ${contribute}
-
-  ## Tests
-
-  ${tests}
-
-  ## Questions
-
-  For any additional questions please reach out to me at:\n
-  [My Github Profile](https://github.com/${githubProfile})\n
-  [Email](mailto:${email})
-
+  ${renderQuestionsSection(githubProfile, email)}
 `;
 }
 
