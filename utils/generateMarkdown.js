@@ -47,9 +47,11 @@ function renderLicenseLink(license) {
 
 // Renders the License section. If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `## License
-  ${renderLicenseLink(license)}
-  `
+  if (license === 'None') {
+    return ''
+  } else {
+    return `## License\n${renderLicenseLink(license)}`
+  }
 }
 
 // Renders the Table of Contents sections.
@@ -100,7 +102,7 @@ function renderUsageSection(usage) {
 
 // Renders the Contributing Section
 function renderContributingSection(contribute) {
-return `
+  return `
 ## Contributing
 
 ${contribute}
@@ -109,7 +111,7 @@ ${contribute}
 
 // Renders the Tests Section
 function renderTestsSection(tests) {
-return `
+  return `
 ## Tests
 
 ${tests}
