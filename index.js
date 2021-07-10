@@ -66,8 +66,6 @@ const questions = [
   },
 ];
 
-
-
 // takes a file name string and the data from `generateMarkdown()` and creates a README.md in the output folder
 function writeToFile(fileName, data) {
   fs.writeFile(`./output/${fileName}`, data, (err) =>

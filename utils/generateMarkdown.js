@@ -1,20 +1,3 @@
-// Returns the license's badge url. If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  return licenseList[license].badge
-}
-
-// Returns the license's link url. If there is no license, return an empty string
-function renderLicenseLink(license) {
-  return licenseList[license].link
-}
-
-// Renders the License section. If there is no license, return an empty string
-function renderLicenseSection(license) {
-  return `## License
-  ${renderLicenseLink(license)}
-  `
-}
-
 // object contains the license names as keys and their links and badges as a nested object properties
 const licenseList = {
   'Apache-2.0': {
@@ -52,9 +35,38 @@ const licenseList = {
   'None': { link: '', badge: '' },
 }
 
-//  drill path licenseList[licenseVariable].link/badge
+// Returns the license's badge url. If there is no license, return an empty string
+function renderLicenseBadge(license) {
+  return licenseList[license].badge
+}
 
-// TODO: Create a function to generate markdown for README
+// Returns the license's link url. If there is no license, return an empty string
+function renderLicenseLink(license) {
+  return licenseList[license].link
+}
+
+// Renders the License section. If there is no license, return an empty string
+function renderLicenseSection(license) {
+  return `## License
+  ${renderLicenseLink(license)}
+  `
+}
+
+// Renders the Table of Contents sections.
+function renderTableOfContents() {
+  return `
+  ## Table of Contents
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  `
+}
+
+// Takes the response object and renders the data from it into a string and returns that string
 function generateMarkdown(data) {
 
   // destructured variables from data object
@@ -75,19 +87,12 @@ function generateMarkdown(data) {
   # ${title}
   
   ## Description
-  ${renderLicenseBadge(license)}\n
+  ${renderLicenseBadge(license)}
 
   ${description}
 
-  ## Table of Contents
-
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-
+  ${renderTableOfContents()}
+  
   ## Installation
 
   ${install}
@@ -115,4 +120,5 @@ function generateMarkdown(data) {
 `;
 }
 
+// export the generated string
 module.exports = generateMarkdown;
