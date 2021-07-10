@@ -70,8 +70,9 @@ function generateMarkdown(data) {
     email,
   } = data;
 
-  return `# ${title}
-
+  return `
+  # ${title}
+  
   ## Description
   ${renderLicenseBadge(license)}\n
 
