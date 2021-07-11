@@ -4,7 +4,9 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-  This application prompts the user for key details about their project and generates well organized and professional README.md file
+  This application prompts the user for key details about their project and generates well organized and professional README file
+
+  [Video Demo of Application](https://drive.google.com/file/d/14ngsbt_L-6UMsPm-MlA6qxsRPRsbrupt/view)
 
   ## Table of Contents
 
@@ -17,28 +19,35 @@
 
   ## Installation
 
-  npm i inquirer
+  * Pull this repository
+  * In the terminal type `npm i` 
 
   ## Usage
 
-  Step 1 - enter `node index.js` into your terminal
+  1. Enter `node index.js` into your terminal
 
-  Step 2 - follow the prompts in the terminal
+  2. Answer the prompts in the terminal and choose a license, select 'None' if the project is not covered by a license.
 
-  Step 3 - Copy the `README.md` from the `/output` folder into your repository folder
+  ![Answer the Prompts](./assets/images/enter-response.jpg)
+
+  ![Select a License](./assets/images/license-select.jpg)
+
+  3. When all prompts are answered a `README.md` will be created in the `/output` folder
+  
+  4. Copy the `README.md` from the `/output` folder into your project folder
   
   
   ## License
-  https://opensource.org/licenses/MIT
+  [This project is covered by the MIT license](https://opensource.org/licenses/MIT)
   
 
   ## Contributing
 
-  None
+  Fork a copy of the repository, make your enhancements and make a pull request. My contact information is below in the [Questions](#questions) section.
 
   ## Tests
 
-  None
+  There are currently no tests for this.
 
   ## Questions
 
