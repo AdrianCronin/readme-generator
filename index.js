@@ -1,7 +1,6 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer'); // inquirer module
 const fs = require('fs'); // file system module
-const generateMarkdown = require('./utils/generateMarkdown'); //
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // array with different license options
 const licenses = [
@@ -66,21 +65,21 @@ const questions = [
   },
 ];
 
-// takes a file name string and the data from `generateMarkdown()` and creates a README.md in the output folder
+// takes a file name string and the data from `generateMarkdown` and creates a README.md in the output folder
 function writeToFile(fileName, data) {
   fs.writeFile(`./output/${fileName}`, data, (err) =>
-    err ? console.error(err) : console.log('writeToFile executed successfully!'))
+    err ? console.error(err) : console.log('README.md created successfully!'))
 };
 
 // starts prompting the user for input when index.js is run
 function init() {
   inquirer
     .prompt(questions) // pass the questions array into the function and start prompting
-    .then((response) =>   // pass answers into `generateMarkdown()`
+    .then((response) =>   // pass answers into `generateMarkdown`
       generateMarkdown(response)
     )
     .then((response) =>
-      // take the data from `generateMarkdown()` and pass it into `writeToFile`, file name generated will be named 'README.md'
+      // take the data from `generateMarkdown` and pass it into `writeToFile`, file name generated will be named 'README.md'
       writeToFile('README.md', response)
     );
 };
