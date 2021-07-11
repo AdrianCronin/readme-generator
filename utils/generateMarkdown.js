@@ -1,4 +1,4 @@
-// object contains the license names as keys and their links and badges as a nested object properties
+// object contains the license names as keys and their link urls and badge urls as a nested object properties
 const licenseList = {
   'Apache-2.0': {
     link: 'https://www.apache.org/licenses/LICENSE-2.0.html',
@@ -55,7 +55,7 @@ function renderLicenseSection(license) {
   }
 }
 
-// Renders the Table of Contents sections.
+// Renders the Table of Contents sections. Omits license if None selected.
 function renderTableOfContents(license) {
   var tableLicense;
   if (license === 'None') {
@@ -75,7 +75,7 @@ function renderTableOfContents(license) {
   `
 }
 
-// Renders the Description Section.
+// Renders the Description Section and the License Badge
 function renderDescriptionSection(description, license) {
   return `
   ## Description
