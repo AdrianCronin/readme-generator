@@ -55,13 +55,19 @@ function renderLicenseSection(license) {
 }
 
 // Renders the Table of Contents sections.
-function renderTableOfContents() {
+function renderTableOfContents(license) {
+  var tableLicense;
+  if (license === 'None') {
+    tableLicense = ''
+  } else {
+    tableLicense = '- [License](#license)'
+  }
   return `
   ## Table of Contents
 
   - [Installation](#installation)
   - [Usage](#usage)
-  - [License](#license)
+  ${tableLicense}
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
@@ -151,7 +157,7 @@ function generateMarkdown(data) {
   
   ${renderDescriptionSection(description, license)}
 
-  ${renderTableOfContents()}
+  ${renderTableOfContents(license)}
   
   ${renderInstallationSection(install)}
   
