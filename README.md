@@ -4,7 +4,7 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-  This application prompts the user for key details about their project and generates well organized and professional README file so that less time is spent working a the README and more time spent working on the project.  
+  This application prompts the user for key details about their project and generates a well organized and professional README file. Spend less time working on the README, more time working on the project and easily explain/share your project with others! 
 
   [Video Demo of Application](https://drive.google.com/file/d/14ngsbt_L-6UMsPm-MlA6qxsRPRsbrupt/view)
 
