@@ -51,8 +51,7 @@ function renderLicenseSection(license) {
     return ''
   } else {
     return `## License
-  This project is covered by the ${license} license\n
-  ${renderLicenseLink(license)}`
+  [This project is covered by the ${license} license](${renderLicenseLink(license)})`
   }
 }
 
